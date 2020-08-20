@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  .side-bar {
+    width: 300px;
+    min-height: 100vh;
+    background-color: orange;
+    } 
+  .applogo {
+    width: 300px;
+    height: 200px;
+    background-image: url('illust595.png');
+    background-size:  300px 150px;
+    background-repeat: no-repeat;
+  }
+}

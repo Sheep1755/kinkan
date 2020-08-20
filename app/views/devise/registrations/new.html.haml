@@ -1,0 +1,25 @@
+.Main-login
+  .Main-login__details
+    .Main-login__details__title
+      %h2 Kinkan新規登録
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.label :氏名
+        %br/
+        = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "例）山田 太郎" ,class: "Main-login__details__information"
+      .field
+        = f.label :メールアドレス
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "eメールアドレス" ,class: "Main-login__details__information"
+      .field
+        = f.label :パスワード
+        %br/
+        = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード（７文字以上）" ,class: "Main-login__details__information"
+      .field
+        = f.label :パスワード（確認用）
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password" ,class: "Main-login__details__information"
+      .actions
+        = f.submit "登録" ,class: "Main-login__contents__btn1"
+      

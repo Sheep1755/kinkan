@@ -1,0 +1,13 @@
+.clock-contents
+   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign-out"   
+   .clock_frame
+      %p#RealdayArea
+      %p#RealtimeClockArea
+   = form_with(url:"/worktimes", local: true, class: "btn_frame") do |f|
+      =f.submit "出勤", id: "start-btn"
+      =f.submit "退勤", id: "end-btn"
+      %input#timecards-btn{ value:"出勤簿", :onClick =>"window.open('/worktimes/show')" }
+      =f.submit "休暇申請", id: "holiday-btn"
+      
+      
+      

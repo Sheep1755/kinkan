@@ -1,0 +1,19 @@
+.Main-login
+  .Main-login__contents
+    .Main-login__contents__title
+      %h2 Kinkanログイン画面
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :メールアドレス 
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "eメールアドレス",class: "Main-login__contents__information"
+      .field
+        = f.label :パスワード 
+        %br/
+        = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード（７文字以上）",class: "Main-login__contents__information"
+      .actions
+        = f.submit "ログイン" ,class: "Main-login__contents__btn1"
+      .actions
+        = link_to "新規登録はこちら", new_user_registration_path, method: :get ,class: "Main-login__contents__btn2"
+
+    

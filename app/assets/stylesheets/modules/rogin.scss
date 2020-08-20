@@ -1,0 +1,51 @@
+.Main-login {
+  width: 100vw;
+  height: 100vh;
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__contents {
+    height: 500px;
+    width: 400px;
+    background-color: white;
+    text-align: center;
+    margin-top: 100px;
+    padding-top: 80px;
+    border-radius: 20px 20px 20px 20px;
+    &__title {
+      font-size: 25px;
+      margin-bottom: 20px;
+      h2 {
+        font-weight: 600;
+        color:orange;
+      }
+    }
+    &__information {
+      height: 40px;
+      width: 250px;
+      padding-left: 10px;
+      margin: 10px 0 10px 0;
+    }
+    &__btn1 {
+      height: 40px;
+      width: 250px;
+      padding-left: 10px;
+      margin: 10px 0 10px 0;
+      background-color: #fca;
+      margin-bottom: 20px;
+      border-radius : 5%;
+      border: 1px solid #fca;
+      font-weight: 900;
+      color: #444444;
+    }
+    &__btn2 {
+      height: 40px;
+      width: 250px;
+      text-decoration: none;
+      color: black;
+      border-bottom: 1px solid black;
+      font-size: 20px;
+    }
+  }
+}
