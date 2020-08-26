@@ -1,11 +1,10 @@
 class WorktimesController < ApplicationController
   before_action :move_to_index, except: [:index]
+  
   def index
-    @timecard = Timecard.new
   end
 
   def show
-    @timecard = Timecard.new(timecard_params)
     require 'date'
     day = Date.today
     start_date = Date::new(day.year,day.month, 1)
@@ -19,20 +18,22 @@ class WorktimesController < ApplicationController
     @month_name =  month_name
   end  
 
-  def new
-    @timecard = Timecard.new
-  end  
-
   def create
-    Timecard.create(timecard_params)
-    require 'date'
-    @timecard = DateTime.now
-    puts(@timecard.hour,":",@timecard.min,":",@timecard.sec,":\n")
+    @time_card = Timecard.new(timecard_params)
+    case params[:commit]
+      when "出勤" ; @time_card.start_time = Time.now
+      when "退勤" ; @time_card.end_time = Time.now
+    end
+    if @time_card.save
+      redirect_to root_path
+    else
+      render :index
+    end  
   end
   
   private
   def timecard_params
-    params.permit(:start_time, :end_time)
+    params.permit(:start_time, :end_time, :total_time, :lost_time).merge(user_id: current_user.id)
   end
   
   def move_to_index
