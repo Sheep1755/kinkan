@@ -7,6 +7,7 @@
    .clock_frame
       %p#RealdayArea
       %p#RealtimeClockArea
+      #message-contents
    = form_with(url:"/worktimes", local: true, class: "btn_frame") do |f|
       =f.submit "出勤", id: "start-btn"
       =f.submit "退勤", id: "end-btn"

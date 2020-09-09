@@ -7,6 +7,8 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'showClock1'
-  %body 
+    = javascript_include_tag 'message-contents'
+  %body
+    -# = render 'layouts/notifications'
     = yield
     

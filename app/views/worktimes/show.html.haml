@@ -11,12 +11,25 @@
           %th 退社時間
           %th 勤務時間
           %th 残業時間
+      -
       - (Date.parse("#{@start_date}")..Date.parse("#{@end_date}")).each do |date|
         %tr
           %td= "#{date.month}月#{date.day}日"
-          %td= %w[日 月 火 水 木 金 土][date.wday]
-          %td
-          %td
-          %td
-          %td
-  
+          %td= %w[日 月 火 水 木 金 土][date.wday]     
+          -timecard = @time_card.where(created_at: date.beginning_of_day..date.end_of_day).first
+          -timecard1 = @time_card.where(created_at: date.beginning_of_day..date.end_of_day).second
+          -if timecard && timecard1
+            %td= timecard.start_time.try(:strftime,"%H:%M:%S")
+            %td= timecard1.end_time.try(:strftime,"%H:%M:%S")
+            %td= timecard1.total_time.try(:strftime,"%H:%M:%S") 
+            %td= timecard1.lost_time.try(:strftime,"%H:%M:%S")
+          -elsif timecard 
+            %td= timecard.start_time.try(:strftime,"%H:%M:%S")
+            %td
+            %td
+            %td
+          -else
+            %td
+            %td
+            %td
+            %td
