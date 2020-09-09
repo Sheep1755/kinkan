@@ -6,10 +6,9 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    .username
-      -if user_signed_in?
-        = "ログインユーザー : " + current_user.name + " 様"
+    = javascript_include_tag 'showClock1'
+    = javascript_include_tag 'message-contents'
   %body
-    %script{src: "/javascript/showClock1.js"} 
+    -# = render 'layouts/notifications'
     = yield
     

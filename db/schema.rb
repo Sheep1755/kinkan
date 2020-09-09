@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2020_07_17_055143) do
   end
 
   create_table "timecards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.time "start_time", null: false
-    t.time "end_time", null: false
-    t.time "total_time", null: false
+    t.time "start_time"
+    t.time "end_time"
+    t.time "total_time"
     t.time "lost_time"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_055143) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", default: "", null: false
+    t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

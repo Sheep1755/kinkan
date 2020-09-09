@@ -4,7 +4,7 @@ function set2fig(num) {
   else { ret = num; }
   return ret;
 }
-function showClock2() {
+function showClock1() {
   let nowTime = new Date();
   let yobi= new Array("Sun","Mon","Thu","Wed","Thr","Fri","Sat");
   let year = nowTime.getFullYear();
@@ -19,4 +19,4 @@ function showClock2() {
   document.getElementById("RealdayArea").innerHTML = msg1
   document.getElementById("RealtimeClockArea").innerHTML = msg2;
 }
-setInterval(showClock2,1000);
+setInterval(showClock1,1000);
