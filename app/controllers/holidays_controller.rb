@@ -5,7 +5,7 @@ class HolidaysController < ApplicationController
   
   def create
     @holiday = Holiday.new(holidays_params)
-    if @holiday.save!
+    if @holiday.save
       redirect_to root_path
     else
       render :new
