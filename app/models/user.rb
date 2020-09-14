@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   
-  has_many :working_time
-  has_many :holiday_time
+  has_many :timecard
+  has_many :holiday
 end

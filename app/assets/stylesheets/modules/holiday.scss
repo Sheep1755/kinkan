@@ -1,0 +1,51 @@
+.Main-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color:#fca;
+  &__contents{
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    h3 {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    &__division {
+      margin-bottom: 20px;
+      width: 200px;
+      padding-left: 5px;
+    }
+    &__reason {
+      margin-bottom: 40px;
+      height: 300px;
+      width: 100%;
+      padding-left: 5px;
+    }
+    &__btn {
+      width: 200px;
+      background-color: #fca;
+      margin-bottom: 20px;
+      border-radius : 5%;
+      // border: 1px solid #fca;
+      font-weight: 900;
+      color: #444444;
+    }
+  }
+}
+
+#holiday_holiday_division {
+  margin-bottom: 20px;
+  width: 200px;
+  padding-left: 5px;
+}

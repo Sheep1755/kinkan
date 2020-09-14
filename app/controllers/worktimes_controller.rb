@@ -4,7 +4,7 @@ class WorktimesController < ApplicationController
   def index
   end
 
-  def create
+  def create  
     require 'date'
     @time_card = Timecard.new(timecard_params)
     case params[:commit]
@@ -20,7 +20,6 @@ class WorktimesController < ApplicationController
     working_time = Time.local(2000,01,01,8,00,00)
     no_time = Time.local(2000,01,01,00,00,00)
     
-  
     if s_time && e_time.present? && Time.at(e_time.end_time.to_i) > regular_time
       sum_time = Time.at(e_time.end_time.to_i) - Time.at(s_time.start_time.to_i) - 10.hours
       @time_card.total_time = Time.at(sum_time)
@@ -32,7 +31,7 @@ class WorktimesController < ApplicationController
     end
 
     if s_time && e_time.present? && Time.at(e_time.total_time.to_i) > working_time
-      a_time = Time.at(e_time.total_time.to_i) - regular_time
+      a_time = Time.at(e_time.total_time.to_i) - working_time
       @time_card.lost_time = Time.at(a_time.to_i) - 9.hours
     elsif s_time && e_time.present? && Time.at(e_time.total_time.to_i) < working_time
       @time_card.lost_time = no_time
@@ -56,7 +55,7 @@ class WorktimesController < ApplicationController
     month_name = start_date.month
     @month_name =  month_name
     @time_card = Timecard.where(created_at: Time.now.beginning_of_month..Time.now.end_of_month, user_id: current_user.id)
-    
+    @holiday = Holiday.where(status: DateTime.now.beginning_of_month..DateTime.now.end_of_month, user_id: current_user.id)
   end
   
   private
