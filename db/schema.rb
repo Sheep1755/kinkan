@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_055143) do
+ActiveRecord::Schema.define(version: 2020_09_11_004211) do
 
-  create_table "holiday_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "holiday_division", null: false
-    t.text "holiday_reason", null: false
+  create_table "holidays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "holiday_division"
+    t.text "holiday_reason"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_holiday_times_on_user_id"
+    t.date "status"
+    t.index ["user_id"], name: "index_holidays_on_user_id"
   end
 
   create_table "timecards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -46,6 +47,6 @@ ActiveRecord::Schema.define(version: 2020_07_17_055143) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "holiday_times", "users"
+  add_foreign_key "holidays", "users"
   add_foreign_key "timecards", "users"
 end

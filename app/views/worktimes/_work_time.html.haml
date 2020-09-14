@@ -13,7 +13,8 @@
       =f.submit "退勤", id: "end-btn"
       #timecards-btn
          =link_to "出勤簿", "/worktimes/show", class: "btn timecards-btn1"
-      =f.submit "休暇申請", id: "holiday-btn"
+      #holiday-btn   
+         =link_to "休暇申請", "/holidays/new", class: "btn timecards-btn2"
       
       
       

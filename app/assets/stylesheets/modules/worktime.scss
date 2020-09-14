@@ -125,6 +125,12 @@
         background-color: white;
         margin: 0 50px;
         outline:0;
+        position: relative;
+        top: 60px;
+        .timecards-btn2 {
+            text-decoration: none;
+            color: #f09;
+        }
                     }
     #holiday-btn:hover {
         background: #fad;
@@ -142,6 +148,4 @@
     font-weight: bold;
     padding: 10px;
     margin-top: 15px;
-    // position: relative;
-    // left: 270px;
   }
