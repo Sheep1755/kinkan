@@ -52,3 +52,7 @@ production:
   database: kinkan_production
   username: kinkan
   password: <%= ENV['KINKAN_DATABASE_PASSWORD'] %>
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
