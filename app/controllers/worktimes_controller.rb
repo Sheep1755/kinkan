@@ -34,8 +34,8 @@ class WorktimesController < ApplicationController
     if s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) > working_time
       a_time = Time.at(e_time.total_time.to_i) - working_time
       @time_card.lost_time = Time.at(a_time.to_i) - 9.hours
-    elsif s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) < working_time
-      @time_card.lost_time = no_time
+    # elsif s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) < working_time
+    #   @time_card.lost_time = no_time
     else
 
     end
