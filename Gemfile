@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
 end
 
 group :development do
@@ -60,3 +61,7 @@ gem "pry-rails"
 gem 'jquery-rails'
 # gem 'i18n_generators'
 gem 'rails-i18n'
+
+group :production do
+  gem 'pg'
+end
