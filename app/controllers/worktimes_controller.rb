@@ -15,25 +15,27 @@ class WorktimesController < ApplicationController
     @time_card.save
 
     s_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).first
-    e_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).second
+    e_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).last
+    # binding.pry
     regular_time = Time.local(2000,01,01,18,00,00)
     working_time = Time.local(2000,01,01,8,00,00)
     no_time = Time.local(2000,01,01,00,00,00)
+  
     
-    if s_time && e_time.present? && Time.at(e_time.end_time.to_i) > regular_time
+    if s_time && e_time.present? && e_time.end_time? && Time.at(e_time.end_time.to_i) > regular_time
       sum_time = Time.at(e_time.end_time.to_i) - Time.at(s_time.start_time.to_i) - 10.hours
       @time_card.total_time = Time.at(sum_time)
-    elsif s_time && e_time.present?
+    elsif s_time && e_time.present? && e_time.end_time?
       sum_time = Time.at(e_time.end_time.to_i) - Time.at(s_time.start_time.to_i) - 9.hours
       @time_card.total_time = Time.at(sum_time)
     else
-    
+
     end
 
-    if s_time && e_time.present? && Time.at(e_time.total_time.to_i) > working_time
+    if s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) > working_time
       a_time = Time.at(e_time.total_time.to_i) - working_time
       @time_card.lost_time = Time.at(a_time.to_i) - 9.hours
-    elsif s_time && e_time.present? && Time.at(e_time.total_time.to_i) < working_time
+    elsif s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) < working_time
       @time_card.lost_time = no_time
     else
 

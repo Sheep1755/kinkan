@@ -1,6 +1,13 @@
 ---
 ja:
   activerecord:
+    models:
+      holiday: 休暇
+    attributes:
+      holiday:
+        status: 日付
+        holiday_division: 申請区分
+        holiday_reason: 申請事由
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

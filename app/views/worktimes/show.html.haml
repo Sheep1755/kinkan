@@ -18,7 +18,7 @@
           %td= "#{date.month}月#{date.day}日"
           %td= %w[日 月 火 水 木 金 土][date.wday]     
           -timecard = @time_card.where(created_at: date.beginning_of_day..date.end_of_day).first
-          -timecard1 = @time_card.where(created_at: date.beginning_of_day..date.end_of_day).second
+          -timecard1 = @time_card.where(created_at: date.beginning_of_day..date.end_of_day).last
           -holiday = @holiday.where(status: date.beginning_of_day..date.end_of_day).first
           -if timecard && timecard1 && holiday
             %td= timecard.start_time.try(:strftime,"%H:%M:%S")
@@ -26,7 +26,7 @@
             %td= timecard1.total_time.try(:strftime,"%H:%M:%S") 
             %td= timecard1.lost_time.try(:strftime,"%H:%M:%S")
             %td= holiday.holiday_division
-          -elsif timecard && timecard1
+          -elsif timecard && timecard1 
             %td= timecard.start_time.try(:strftime,"%H:%M:%S")
             %td= timecard1.end_time.try(:strftime,"%H:%M:%S")
             %td= timecard1.total_time.try(:strftime,"%H:%M:%S") 

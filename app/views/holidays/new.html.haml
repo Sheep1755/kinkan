@@ -5,6 +5,7 @@
       %h3 申請内容
       = form_with(model: @holiday,local: true) do |form|
         .Main-box__date
+          = render 'layouts/error_messages', model: form.object
           = raw sprintf(form.date_select(:status, use_month_numbers: true, date_separator:'%s'),'年','月')+'日'
         .Main-box__details
           = form.select :holiday_division, [ ["有給休暇"], ["特別休暇"], ["午前休暇"], ["午後休暇"],["早退"] ,["遅刻"]], include_blank: '選択してください', class: "Main-box__details__division", disabled: true
