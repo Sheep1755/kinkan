@@ -16,10 +16,9 @@ class WorktimesController < ApplicationController
 
     s_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).first
     e_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).last
-    # binding.pry
     regular_time = Time.local(2000,01,01,18,00,00)
     working_time = Time.local(2000,01,01,8,00,00)
-    no_time = Time.local(2000,01,01,00,00,00)
+    no_time = Time.local(2000,01,01,0,00,00)
   
     
     if s_time && e_time.present? && e_time.end_time? && Time.at(e_time.end_time.to_i) > regular_time
