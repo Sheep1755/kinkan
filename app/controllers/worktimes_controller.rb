@@ -16,9 +16,9 @@ class WorktimesController < ApplicationController
 
     s_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).first
     e_time = Timecard.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day, user_id: current_user.id).last
-    regular_time = Time.local(2000,01,01,18,00,00)
-    working_time = Time.local(2000,01,01,8,00,00)
-    no_time = Time.local(2000,01,01,0,00,00)
+    regular_time = Time.local(2000,01,01,18,0,0)
+    working_time = Time.local(2000,01,01,8,0,0)
+    no_time = Time.local(2000,01,01,0,0,0)
   
     
     if s_time && e_time.present? && e_time.end_time? && Time.at(e_time.end_time.to_i) > regular_time
@@ -33,7 +33,7 @@ class WorktimesController < ApplicationController
 
     @time_card.save
 
-    # binding.pry
+  
     if s_time && e_time.present? && e_time.end_time? && Time.at(@time_card.total_time.to_i) > working_time
       a_time = Time.at(@time_card.total_time.to_i) - working_time
       @time_card.lost_time = Time.at(a_time.to_i) - 9.hours
