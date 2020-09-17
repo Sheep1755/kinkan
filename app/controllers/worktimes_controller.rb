@@ -28,11 +28,14 @@ class WorktimesController < ApplicationController
       sum_time = Time.at(e_time.end_time.to_i) - Time.at(s_time.start_time.to_i) - 9.hours
       @time_card.total_time = Time.at(sum_time)
     else
-
+    
     end
 
-    if s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) > working_time
-      a_time = Time.at(e_time.total_time.to_i) - working_time
+    @time_card.save
+
+    # binding.pry
+    if s_time && e_time.present? && e_time.end_time? && Time.at(@time_card.total_time.to_i) > working_time
+      a_time = Time.at(@time_card.total_time.to_i) - working_time
       @time_card.lost_time = Time.at(a_time.to_i) - 9.hours
     # elsif s_time && e_time.present? && e_time.end_time? && Time.at(e_time.total_time.to_i) < working_time
     #   @time_card.lost_time = no_time

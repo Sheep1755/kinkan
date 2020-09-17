@@ -3,7 +3,7 @@
   .side-bar {
     width: 300px;
     min-height: 100vh;
-    background-color: orange;
+    background-color:#C0DEED;
     } 
   .applogo {
     width: 300px;
@@ -11,5 +11,23 @@
     background-image: url('illust595.png');
     background-size:  300px 150px;
     background-repeat: no-repeat;
+    position: fixed;
+    background-color: rgba( 255, 255, 255, 0);
   }
+}
+
+.side-bar__username {
+  position: absolute;
+  top: 200px;
+}
+
+.side-bar__useremail{
+  position: absolute;
+  top: 230px;
+}
+
+.side-bar__userpass{
+  position: absolute;
+  top: 255px;
+
 }

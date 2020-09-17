@@ -2,39 +2,37 @@
   box-sizing: border-box;
 }
 
-.user-name {
-    position: relative;
-    left: 130px;
-    bottom: 30px;
-    float: right;
-    margin:0 20px 10px 0;
-    color: #444444;
-    font-weight: 700
-  }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Ceviche+One&family=Fredoka+One&family=Luckiest+Guy&family=Modak&display=swap');
 
 .clock-contents {
     width: calc(100vw - 300px);
-    color:#fca;
+    color:#ff8c00;
     font-family: 'Fredoka One', cursive;
     padding-top: 50px;
     text-align: center;
         #RealdayArea{
+            padding-top: 30px;
             font-size: 4em;
             text-align: center;
             margin-left: 100px;
             float: right;
             position: relative;
-            left: 50px;
+            right: 250px;
+            background-color: rgba( 255, 255, 255, 0);
             }
         #RealtimeClockArea {
             font-size: 7em;
             text-align: center;
-            }
+            padding-top: 118px;
+            margin-right: 150px;
+        }
         #message-contents {
             width: 100%;
             height: 70px;
+            position: relative;
+            right: 70px;
             }    
 .btn_frame {
     text-align: center;
@@ -42,7 +40,8 @@
     font-size: 35px;
     font-family: "YuGothic M";
     width: inherit;
-    
+    position: fixed;
+    right: 70px; 
     #start-btn {
         display: inline-block;
         text-decoration: none;
@@ -104,11 +103,10 @@
         .timecards-btn1 {
             text-decoration: none;
             color: #dd0;
+            background-color: white;
         }
     }
-    #timecards-btn:hover {
-        background: #ffa;
-                }
+    
     #holiday-btn {
         display: inline-block;
         text-decoration: none;
@@ -130,22 +128,49 @@
         .timecards-btn2 {
             text-decoration: none;
             color: #f09;
+            background-color:white;
         }
                     }
-    #holiday-btn:hover {
-        background: #fad;
-        }                    
+             
     }        
 }
 
 .sign-out {
     float: right;
-    border: 1px solid ;
+    border: 3px solid ;
     margin-right: 30px;
     color:#fca;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     padding: 10px;
     margin-top: 15px;
+    position: relative;
+    background-color: rgba( 255, 255, 255, 0);
+  }
+
+.sign-in {
+    float: right;
+    border: 3px solid ;
+    margin-right: 30px;
+    color:#fca;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 8px;
+    margin-top: 15px;
+    position: relative;
+    background-color: rgba( 255, 255, 255, 0);
+}
+
+  .user-name {
+    padding-left: 130px;
+    color:#ff8c00;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: unset;
+    position: relative;
+    right: 60px;
+    background-color: rgba( 255, 255, 255, 0);
   }
