@@ -7,6 +7,7 @@
 ## URL
 
 以下のURLで動作確認をすることができます。
+テスト用のアカウト情報はトップページに記載しています。
 
 https://kinkan1.herokuapp.com/
 
@@ -14,6 +15,8 @@ https://kinkan1.herokuapp.com/
 
 * ユーザー管理機能
   - 名前/メールアドレス/パスワード
+* 現在時刻表示機能
+  - トップページに現在日時及び時刻を表示  
 * 出退勤打刻機能
   - ログイン済のユーザーのみ打刻可能
   - 出勤・退勤ボタンをそれぞれ打刻した時間が出勤簿に反映される
@@ -31,6 +34,15 @@ https://kinkan1.herokuapp.com/
 ## バージョン
 
 ruby 2.6.5  Rails 6.0.3.2
+
+## 使用Gem
+ - devise
+ - haml-rails >= 1.0, <= 2.0.1
+ - font-awesome-sass
+ - pry-rails
+ - jquery-rails
+ - rails-i18n
+ - pg
 
 
 
