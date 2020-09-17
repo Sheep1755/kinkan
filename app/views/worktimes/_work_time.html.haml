@@ -1,9 +1,12 @@
 .clock-contents
    .user-logout
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign-out"
-   .user-name      
       -if user_signed_in?
-         = "ログインユーザー : " + current_user.name + " 様"           
+         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sign-out"
+         .user-name
+            = "ログインユーザー : " + current_user.name + " 様"
+      -else   
+         = link_to "ログイン", new_user_session_path, class: "sign-in"
+   .user-name      
    .clock_frame
       %p#RealdayArea
       %p#RealtimeClockArea

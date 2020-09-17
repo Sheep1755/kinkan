@@ -1,9 +1,8 @@
 .wrapper
-  = render partial: 'worktimes/side_bar'
   .Main-box
     .Main-box__contents
       %h3 申請内容
-      = form_with(model: @holiday,local: true) do |form|
+      = form_with(model: @holiday,local: true, class: "Main-box__contents__form") do |form|
         .Main-box__date
           = render 'layouts/error_messages', model: form.object
           = raw sprintf(form.date_select(:status, use_month_numbers: true, date_separator:'%s'),'年','月')+'日'

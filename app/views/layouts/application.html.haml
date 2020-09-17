@@ -7,8 +7,10 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'showClock1'
-    = javascript_include_tag 'message-contents'
+    - if user_signed_in?
+      = javascript_include_tag 'message-contents'
   %body
+    #awan
     -# = render 'layouts/notifications'
     = yield
     
