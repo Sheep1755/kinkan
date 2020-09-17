@@ -10,7 +10,9 @@
     - if user_signed_in?
       = javascript_include_tag 'message-contents'
   %body
-    #awan
-    -# = render 'layouts/notifications'
+    .notifications
+      - flash.each do |key, value|
+        = content_tag(:div, value, class: key)
+    #awan    
     = yield
     
