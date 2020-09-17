@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション概要
 
-Things you may want to cover:
+勤怠管理を行えるアプリケーションとなっています。
 
-* Ruby version
+## URL
 
-* System dependencies
+以下のURLで動作確認をすることができます。
 
-* Configuration
+https://kinkan1.herokuapp.com/
 
-* Database creation
+## 機能一覧
 
-* Database initialization
+* ユーザー管理機能
+* 出退勤打刻機能
+* 勤務時間算出機能
+* 残業時間算出機能
+* 出勤簿表示機能
+* 休暇申請機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
