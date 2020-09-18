@@ -24,7 +24,7 @@ https://kinkan1.herokuapp.com/
   - ログイン済のユーザーのみ閲覧可能
   - 上記、出退勤の時間を表示
   - 退勤時間から出勤時間を差し引いた時間がその日の勤務時間として表示される
-    (出勤9:00~退勤18:00で記録された場合、休憩時間１時間が差し引かれるようになっているため勤務時間は８時間と表示される)
+    (出勤9:00~退勤18:00で記録された場合、休憩時間1時間が差し引かれるようになっているため勤務時間は8時間と表示される)
   - 勤務時間が8時間以上の場合は残業時間が記録される
   - 休暇申請を行った場合、備考欄に休暇区分が表示される  
 * 休暇申請機能
@@ -36,13 +36,13 @@ https://kinkan1.herokuapp.com/
 ruby 2.6.5  Rails 6.0.3.2
 
 ## 使用Gem
- - devise
- - haml-rails >= 1.0, <= 2.0.1
- - font-awesome-sass
- - pry-rails
- - jquery-rails
- - rails-i18n
- - pg
+ * devise
+ * haml-rails >= 1.0, <= 2.0.1
+ * font-awesome-sass
+ * pry-rails
+ * jquery-rails
+ * rails-i18n
+ * pg
 
 
 
