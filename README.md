@@ -47,35 +47,35 @@ ruby 2.6.5  Rails 6.0.3.2
 
 ## DB設計
  * userテーブル
-  |Column|Type|Option|
-  |------|----|------|
-  |name|string|null: false|
-  |email|string|null: false, unique: true, default: ""|
-  |password|string|null: false, unique:true, default: ""|
-  * Association
-  - has_many :timecard
-  - has_many :holiday
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|email|string|null: false, unique: true, default: ""|
+|password|string|null: false, unique:true, default: ""|
+* Association
+- has_many :timecard
+- has_many :holiday
 
  * timecardテーブル
-  |Column|Type|Option|
-  |------|----|------|
-  |start_time|string|
-  |end_time|string|
-  |total_time|string|
-  |lost_time|string|
-  |user|references|null: false, foreign_key: true|
-  * Association
-  - belongs_to :user
+|Column|Type|Option|
+|------|----|------|
+|start_time|string|
+|end_time|string|
+|total_time|string|
+|lost_time|string|
+|user|references|null: false, foreign_key: true|
+* Association
+- belongs_to :user
 
  * holidayテーブル
-  |Column|Type|Option|
-  |------|----|------|
-  |holiday_division|string|
-  |holiday_reason|text|
-  |status|date|
-  |user|references|null: false, foreign_key: true|
-  * Association
-  - belongs_to :user
+|Column|Type|Option|
+|------|----|------|
+|holiday_division|string|
+|holiday_reason|text|
+|status|date|
+|user|references|null: false, foreign_key: true|
+* Association
+- belongs_to :user
 
 ## 制作背景
 
