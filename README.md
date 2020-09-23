@@ -36,6 +36,7 @@ https://kinkan1.herokuapp.com/
 ruby 2.6.5  Rails 6.0.3.2
 
 ## 使用Gem
+
  * devise
  * haml-rails >= 1.0, <= 2.0.1
  * font-awesome-sass
@@ -43,6 +44,62 @@ ruby 2.6.5  Rails 6.0.3.2
  * jquery-rails
  * rails-i18n
  * pg
+
+## DB設計
+ * userテーブル
+  |Column|Type|Option|
+  |------|----|------|
+  |name|string|null: false|
+  |email|string|null: false, unique: true, default: ""|
+  |password|string|null: false, unique:true, default: ""|
+  * Association
+  - has_many :timecard
+  - has_many :holiday
+
+ * timecardテーブル
+  |Column|Type|Option|
+  |------|----|------|
+  |start_time|string|
+  |end_time|string|
+  |total_time|string|
+  |lost_time|string|
+  |user|references|null: false, foreign_key: true|
+  * Association
+  - belongs_to :user
+
+ * holidayテーブル
+  |Column|Type|Option|
+  |------|----|------|
+  |holiday_division|string|
+  |holiday_reason|text|
+  |status|date|
+  |user|references|null: false, foreign_key: true|
+  * Association
+  - belongs_to :user
+
+## 制作背景
+
+エンジニア転職を目的としてこのアプリケーションを作成しました。
+自身がエンジニアになった際には働く人の業務の効率化を図れるものを作ることに携わっていきたいと考えています。
+その考えに基づき、勤怠管理、つまり労働時間を管理するということは業務の効率化を考える上での根幹的な部分であると思いますので、
+今回のアプリケーションの作成に至りました。
+
+## 工夫ポイント
+
+1日8時間勤務を想定した上で、労働過多になっていないか視覚的に見れるように、その日の労働時間が8時間を超えたら、
+残業時間がカウントされるようになっています。
+
+## 課題＆今後実装予定
+
+ * 打刻が１日何回もできるようになってしまっているため制限を掛けられるようにしたい。
+ * 出勤簿の修正機能の実装
+ * 上長による休暇申請の承認機能
+
+ 
+ 
+
+
+
 
 
 
