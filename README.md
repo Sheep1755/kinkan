@@ -52,7 +52,7 @@ userテーブル
 |name|string|null: false|
 |email|string|null: false, unique: true, default: ""|
 |password|string|null: false, unique:true, default: ""|
-Association
+* Association
 - has_many :timecard
 - has_many :holiday
 
@@ -64,7 +64,7 @@ timecardテーブル
 |total_time|string|
 |lost_time|string|
 |user|references|null: false, foreign_key: true|
-Association
+* Association
 - belongs_to :user
 
 holidayテーブル
@@ -74,7 +74,8 @@ holidayテーブル
 |holiday_reason|text|
 |status|date|
 |user|references|null: false, foreign_key: true|
-Association
+
+* Association
 - belongs_to :user
 
 ## 制作背景
