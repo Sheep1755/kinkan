@@ -69,7 +69,7 @@ class WorktimesController < ApplicationController
   
   def move_to_index
     unless user_signed_in?
-      flash.now[:alert] = "ログインしてください。"
+      flash.now[:alert] = "ログインしてください"
       render :index
     end
   end
