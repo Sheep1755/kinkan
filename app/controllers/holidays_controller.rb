@@ -11,7 +11,8 @@ class HolidaysController < ApplicationController
   def create
     @holiday = Holiday.new(holidays_params)
     if @holiday.save
-      redirect_to root_path, success: "申請が完了しました"
+      flash[:success] = "申請が完了しました"
+      redirect_to root_path
     else
       render :new
     end    
@@ -24,7 +25,8 @@ class HolidaysController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      redirect_to root_path, success: "ログインしてください"
+      flash[:roginalert] = "ログインしてください"
+      redirect_to root_path
     end
   end
 end
