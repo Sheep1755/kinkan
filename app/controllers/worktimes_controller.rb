@@ -61,7 +61,11 @@ class WorktimesController < ApplicationController
     @time_card = Timecard.where(created_at: Time.now.beginning_of_month..Time.now.end_of_month, user_id: current_user.id)
     @holiday = Holiday.where(status: DateTime.now.beginning_of_month..DateTime.now.end_of_month, user_id: current_user.id)
   end
-  
+
+  def edit
+    @time_card = Timecard.find(params[:id])
+  end
+    
   private
   def timecard_params
     params.permit(:start_time, :end_time, :total_time, :lost_time).merge(user_id: current_user.id)
@@ -73,6 +77,7 @@ class WorktimesController < ApplicationController
       render :index
     end
   end
+
 end
 
   
