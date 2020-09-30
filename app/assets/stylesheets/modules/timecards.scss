@@ -5,15 +5,24 @@
   h1 {
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
+    margin-bottom: 20px;
   }
   table,th,td {
     border: 2px #808080 solid;
     width: calc(100vw - 300px);
     text-align: center;
+    margin-left: 145px;
   } 
 } 
 
 #topreturn-btn {
   background-color: rgba( 255, 255, 255, 0);
+  float: right;
+  position: relative;
+  right: 20px;
+  bottom: 30px;
+  &__input {
+    width: 100px;
+  }
 }
   
