@@ -10,5 +10,5 @@
           = form.select :holiday_division, [ ["有給休暇"], ["特別休暇"], ["午前休暇"], ["午後休暇"],["早退"] ,["遅刻"]], include_blank: '選択してください', class: "Main-box__details__division", disabled: true
           = form.text_area :holiday_reason, placeholder: "事由", rows: "3", class: "Main-box__details__reason"
           = form.submit "申請", class: "Main-box__details__btn"
-        .Main-box__delete
-          = submit_tag "申請取り消しへ", class: "Main-box__delete__btn"
+      .Main-box__delete
+        = link_to "申請取り消しへ", "/holidays/:id" ,class: "Main-box__delete__btn"
